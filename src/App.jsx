@@ -1,7 +1,9 @@
-import React from 'react';
+// import React from 'react';
 // import Destructprops from "./Destructprops";
 // import "./index.css"; 
-import ListRendering from "./Component/ListRendering";
+//task3//
+// import ListRendering from "./Component/ListRendering";
+
 
 // function App() {
 //   const users = [
@@ -35,12 +37,43 @@ import ListRendering from "./Component/ListRendering";
 
 //task 3//
 
-export default function App() {
-  return (
-    <div>
-      <ListRendering />
+// export default function App() {
+//   return (
+//     <div>
+//       <ListRendering />
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
  
+import React from "react";
+import StudentCard from "./Component/StudentCard";
+
+function App() {
+  const students = [
+    { id: 1, name: "Ajay", course: "React", isActive: true },
+    { id: 2, name: "Vijay", course: "Node", isActive: false },
+    { id: 3, name: "Ram", course: "Javascript", isActive: true },
+    { id: 4, name: "Sowmya", course: "Python", isActive: false }
+  ];
+
+  const containerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    fontFamily: 'Arial, sans-serif',
+    padding: '20px'
+  };
+
+  return (
+    <div className="App">
+      <h1>Student List App</h1>
+      <div style={containerStyle}>
+        {students.map((student) => (
+          <StudentCard key={student.id} student={student} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
