@@ -1,7 +1,6 @@
 import React from 'react';
 
 const StudentCard = ({ student }) => {
-  // Inline styles for the card
   const cardStyle = {
     border: '2px solid #333',
     padding: '15px',
