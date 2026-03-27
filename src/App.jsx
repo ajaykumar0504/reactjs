@@ -45,35 +45,47 @@
 //     </div>
 //   )
 // }
- 
-import React from "react";
-import StudentCard from "./Component/StudentCard";
 
-function App() {
-  const students = [
-    { id: 1, name: "Ajay", course: "React", isActive: true },
-    { id: 2, name: "Vijay", course: "Node", isActive: false },
-    { id: 3, name: "Ram", course: "Javascript", isActive: true },
-    { id: 4, name: "Sowmya", course: "Python", isActive: false }
-  ];
+ //task4//
+// import React from "react";
+// import StudentCard from "./Component/StudentCard";
 
-  const containerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    fontFamily: 'Arial, sans-serif',
-    padding: '20px'
-  };
+// function App() {
+//   const students = [
+//     { id: 1, name: "Ajay", course: "React", isActive: true },
+//     { id: 2, name: "Vijay", course: "Node", isActive: false },
+//     { id: 3, name: "Ram", course: "Javascript", isActive: true },
+//     { id: 4, name: "Sowmya", course: "Python", isActive: false }
+//   ];
 
+//   const containerStyle = {
+//     display: 'flex',
+//     flexWrap: 'wrap',
+//     fontFamily: 'Arial, sans-serif',
+//     padding: '20px'
+//   };
+
+//   return (
+//     <div className="App">
+//       <h1>Student List App</h1>
+//       <div style={containerStyle}>
+//         {students.map((student) => (
+//           <StudentCard key={student.id} student={student} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from 'react'
+import RegistrationForm from "./Component/RegistrationForm";
+
+export default function App() {
   return (
-    <div className="App">
-      <h1>Student List App</h1>
-      <div style={containerStyle}>
-        {students.map((student) => (
-          <StudentCard key={student.id} student={student} />
-        ))}
-      </div>
+    <div>
+    <RegistrationForm />
     </div>
-  );
+  )
 }
-
-export default App;
