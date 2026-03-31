@@ -79,13 +79,25 @@
 
 // export default App;
 
+//task5//
+// import React from 'react'
+// import RegistrationForm from "./Component/RegistrationForm";
+
+// export default function App() {
+//   return (
+//     <div>
+//     <RegistrationForm />
+//     </div>
+//   )
+// }
+
 import React from 'react'
-import RegistrationForm from "./Component/RegistrationForm";
+import Stopwatch from "./Component/Stopwatch";
 
 export default function App() {
   return (
     <div>
-    <RegistrationForm />
+    <Stopwatch />  
     </div>
   )
 }

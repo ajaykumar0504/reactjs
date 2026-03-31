@@ -12,6 +12,7 @@ export default function RegistrationForm() {
     state: "",
     country: "",
     zipCode: "",
+    terms: false,
   });
 
   const [errors, setErrors] = useState({});
@@ -90,6 +91,18 @@ export default function RegistrationForm() {
           {renderInput("State", "state")}
           {renderInput("Country", "country")}
           {renderInput("Zip Code", "zipCode")}
+        </div>
+
+        <div style={styles.checkboxGroup}>
+          <input
+            name="terms"
+            type="checkbox"
+            checked={form.terms}
+            onChange={handleChange}
+          />
+          <label style={{ marginLeft: "8px", fontSize: "14px" }}>
+            I agree to the terms
+          </label>
         </div>
 
         <button type="submit" style={styles.button}>Submit Registration</button>
