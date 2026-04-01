@@ -91,13 +91,28 @@
 //   )
 // }
 
+//Task6//
+// import React from 'react'
+// import Stopwatch from "./Component/Stopwatch";
+
+// export default function App() {
+//   return (
+//     <div>
+//     <Stopwatch />  
+//     </div>
+//   )
+// }
+
+//task7
 import React from 'react'
-import Stopwatch from "./Component/Stopwatch";
+import UseEffect from "./Component/UseEffect";
 
 export default function App() {
   return (
     <div>
-    <Stopwatch />  
+      <UseEffect/>
+      
     </div>
   )
 }
+
