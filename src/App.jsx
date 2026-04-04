@@ -103,16 +103,30 @@
 //   )
 // }
 
-//task7
+//task7//
+// import React from 'react'
+// import UseEffect from "./Component/UseEffect";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <UseEffect/>
+      
+//     </div>
+//   )
+// }
+
+//task8//
 import React from 'react'
-import UseEffect from "./Component/UseEffect";
+import MiniChatApp from './Component/MiniChatApp';
 
 export default function App() {
   return (
     <div>
-      <UseEffect/>
+      <MiniChatApp/>
       
     </div>
   )
 }
+
 
