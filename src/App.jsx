@@ -131,61 +131,73 @@
 
 //Task9//
 
- import React, { useState } from "react";
-import {Theme} from "./Component/Theme";
-import ProfileImage from "./Component/ProfileImage";
+// import React, { useState } from "react";
+// import {Theme} from "./Component/Theme";
+// import ProfileImage from "./Component/ProfileImage";
+
+// export default function App() {
+//   const [theme, setTheme] = useState("light");
+
+//   const toggleTheme = () => {
+//     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+//   };
+
+// const appStyle = {
+//   textAlign: "center",
+//   padding: "40px 20px",
+//   minHeight: "100vh",
+//   transition: "0.3s",
+//   background:
+//     theme === "light"
+//       ? "linear-gradient(to right, #e3f2fd, #fce4ec)"
+//       : "linear-gradient(to right, #1e1e2f, #121212)",
+//   color: theme === "light" ? "#000" : "#faf5f5",
+//   display: "flex",
+//   flexDirection: "column",
+//   alignItems: "center",
+// };
+
+// const titleStyle = {
+//   fontSize: "28px",
+//   marginBottom: "20px",
+//   color: theme === "light" ? "#d32f2f" : "#ff6b6b", 
+// };
+
+// const buttonStyle = {
+//   padding: "10px 20px",
+//   marginBottom: "50px",
+//   border: "none",
+//   background: "linear-gradient(45deg, #4caf50, #2e7d32)",
+//   color: theme === "light" ? "#fff" : "#fff",
+//   borderRadius: "25px",
+//   cursor: "pointer",
+// };
+
+//   return (
+//     <Theme.Provider value={{ theme, toggleTheme }}>
+//       <div style={appStyle}>
+//         <h1 style={{ color: theme === "light" ? "red" : "#ff6b6b" }}>
+//           Profile Image Upload & Theme Change</h1>
+
+//         <button onClick={toggleTheme} style={buttonStyle}>
+//           Change Theme
+//         </button>
+
+//         <ProfileImage />
+//       </div>
+//     </Theme.Provider>
+//   );
+// }
+  
+//task10//
+import React from 'react'
+import UseReducer from './Component/UseReducer'
+
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-const appStyle = {
-  textAlign: "center",
-  padding: "40px 20px",
-  minHeight: "100vh",
-  transition: "0.3s",
-  background:
-    theme === "light"
-      ? "linear-gradient(to right, #e3f2fd, #fce4ec)"
-      : "linear-gradient(to right, #1e1e2f, #121212)",
-  color: theme === "light" ? "#000" : "#faf5f5",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
-const titleStyle = {
-  fontSize: "28px",
-  marginBottom: "20px",
-  color: theme === "light" ? "#d32f2f" : "#ff6b6b", 
-};
-
-const buttonStyle = {
-  padding: "10px 20px",
-  marginBottom: "50px",
-  border: "none",
-  background: "linear-gradient(45deg, #4caf50, #2e7d32)",
-  color: theme === "light" ? "#fff" : "#fff",
-  borderRadius: "25px",
-  cursor: "pointer",
-};
-
   return (
-    <Theme.Provider value={{ theme, toggleTheme }}>
-      <div style={appStyle}>
-        <h1 style={{ color: theme === "light" ? "red" : "#ff6b6b" }}>
-          Profile Image Upload & Theme Change</h1>
-
-        <button onClick={toggleTheme} style={buttonStyle}>
-          Change Theme
-        </button>
-
-        <ProfileImage />
-      </div>
-    </Theme.Provider>
-  );
+    <div>
+      <UseReducer/>
+    </div>
+  )
 }
-  
