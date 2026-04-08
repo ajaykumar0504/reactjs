@@ -190,14 +190,26 @@
 // }
   
 //task10//
-import React from 'react'
-import UseReducer from './Component/UseReducer'
+// import React from 'react'
+// import UseReducer from './Component/UseReducer'
 
+
+// export default function App() {
+//   return (
+//     <div>
+//       <UseReducer/>
+//     </div>
+//   )
+// }
+
+//task11//
+import React from 'react'
+import TicTacToe from './Component/TicTacToe'
 
 export default function App() {
   return (
     <div>
-      <UseReducer/>
+      <TicTacToe/>
     </div>
   )
 }
