@@ -203,13 +203,108 @@
 // }
 
 //task11//
-import React from 'react'
-import TicTacToe from './Component/TicTacToe'
+// import React from 'react'
+// import TicTacToe from './Component/TicTacToe'
+
+// export default function App() {
+//   return (
+//     <div>
+//       <TicTacToe/>
+//     </div>
+//   )
+// }
+
+//task12//
+
+import React from 'react';
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route, 
+  Link, 
+  Outlet 
+} from 'react-router-dom';
+
+
+const styles = {
+  navbar: {
+    display: 'flex',
+    gap: '20px',
+    padding: '1rem',
+    background: '#333',
+    color: 'white'
+  },
+  link: {
+    color: '#00d8ff',
+    textDecoration: 'none',
+    fontSize: '18px'
+  },
+  nestedNav: {
+    display: 'flex',
+    gap: '15px',
+    margin: '20px 0',
+    padding: '10px',
+    background: '#eee',
+    borderRadius: '5px'
+  },
+  container: {
+    padding: '20px',
+    fontFamily: 'sans-serif'
+  }
+};
+
+const Home = () => <div><h1>Home</h1><p>Welcome to the main page.</p></div>;
+const About = () => <div><h1>About</h1><p>This is the about section.</p></div>;
+const Contact = () => <div><h1>Contact</h1><p>Contact us at support@example.com</p></div>;
+const Profile = () => <div><h1>Profile</h1><p>Welcome back, User!</p></div>;
+
+const WebDev = () => <h2>Web Development Services</h2>;
+const AppDev = () => <h2>App Development Services</h2>;
+const UIUX = () => <h2>UI/UX Design Services</h2>;
+
+const Services = () => {
+  return (
+    <div>
+      <h1>Services</h1>
+      <nav style={styles.nestedNav}>
+        <Link style={styles.link} to="web">Web Development</Link>
+        <Link style={styles.link} to="app">App Development</Link>
+        <Link style={styles.link} to="uiux">UI/UX Design</Link>
+      </nav>
+      <div style={{ border: '1px dashed #ccc', padding: '20px' }}>
+        <Outlet />
+      </div>
+    </div>
+  );
+};
 
 export default function App() {
   return (
-    <div>
-      <TicTacToe/>
-    </div>
-  )
+    <Router>
+      <nav style={styles.navbar}>
+        <Link style={styles.link} to="/">Home</Link>
+        <Link style={styles.link} to="/about">About</Link>
+        <Link style={styles.link} to="/services">Services</Link>
+        <Link style={styles.link} to="/contact">Contact</Link>
+        <Link style={styles.link} to="/profile">Profile</Link>
+      </nav>
+
+      <div style={styles.container}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/services" element={<Services />}>
+            <Route index element={
+              <p>Select a service to view details.</p>
+              } />
+            <Route path="web" element={<WebDev />} />
+            <Route path="app" element={<AppDev />} />
+            <Route path="uiux" element={<UIUX />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
+  );
 }
