@@ -14,7 +14,6 @@ export default function UserList() {
 
   return (
     <div style={styles.container}>
-      {/* User List Sidebar */}
       <div style={styles.list}>
         <h2 style={styles.heading}>Users</h2>
         <div style={styles.scrollContainer}>
@@ -34,7 +33,6 @@ export default function UserList() {
         </div>
       </div>
 
-      {/* User Details Display */}
       <div style={styles.details}>
         {selectedUser ? (
           <UserDetails user={selectedUser} />

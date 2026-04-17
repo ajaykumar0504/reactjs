@@ -476,13 +476,59 @@
 // };
 
 //task14//
-import React from 'react'
-import CRUD from './Component/CRUD'
+// import React from 'react'
+// import CRUD from './Component/CRUD'
 
-export default function App() {
+// export default function App() {
+//   return (
+//     <div>
+//       <CRUD/>
+//     </div>
+//   )
+// }
+
+//task15//
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { AppProvider } from "./Component/AppContext";
+
+import Hero from "./Component/Hero";
+import Fleet from "./Component/Fleet";
+import Support from "./Component/Support";
+import MemberPanel from "./Component/MemberPanel";
+
+const App = () => {
   return (
-    <div>
-      <CRUD/>
-    </div>
-  )
-}
+    <AppProvider>
+      <Router>
+        <nav style={styles.nav}>
+          <h2 style={{ color: "#00d4ff" }}>AJ*DRIVE</h2>
+          <div style={{ display: "flex", gap: "20px" }}>
+            <Link to="/" style={styles.link}>Home</Link>
+            <Link to="/fleet" style={styles.link}>Fleet</Link>
+            <Link to="/support" style={styles.link}>Support</Link>
+            <Link to="/member" style={styles.link}>Member Panel</Link>
+          </div>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/fleet" element={<Fleet />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/member/*" element={<MemberPanel />} />
+        </Routes>
+
+        <footer style={{ textAlign: "center", padding: "20px", background: "#000", color: "#fff" }}>
+          © 2026 AJ*Drive Premium Automotive
+        </footer>
+      </Router>
+    </AppProvider>
+  );
+};
+
+const styles = {
+  nav: { display: "flex", justifyContent: "space-between", padding: "10px 5%", background: "#000", alignItems: "center" },
+  link: { color: "#fff", textDecoration: "none", fontWeight: "bold" }
+};
+
+export default App;
