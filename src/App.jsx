@@ -533,13 +533,25 @@
 
 // export default App;
 
+// import React from 'react'
+// import ClassroomChat from './Component/ClassroomChat'
+
+// export default function App() {
+//   return (
+//     <div>
+//       <ClassroomChat/>
+//     </div>
+//   )
+// }
+
 import React from 'react'
-import ClassroomChat from './Component/ClassroomChat'
+import Login from './pages/Login'
+
 
 export default function App() {
   return (
     <div>
-      <ClassroomChat/>
+      <Login/>
     </div>
   )
 }
